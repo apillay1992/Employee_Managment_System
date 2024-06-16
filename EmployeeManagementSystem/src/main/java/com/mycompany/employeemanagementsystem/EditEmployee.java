@@ -4,18 +4,154 @@
  */
 package com.mycompany.employeemanagementsystem;
 
+import javax.swing.*;
+import java.util.*;
+import java.io.*;
+import java.text.*;
+
 /**
  *
  * @author ashley
  */
 public class EditEmployee extends javax.swing.JFrame {
-
+    ArrayList<Job> jobs;
+    ArrayList<Employee> employees;
+    DecimalFormat formatter;
     /**
      * Creates new form EditEmployee
      */
     public EditEmployee() {
         initComponents();
+        
+        formatter = new DecimalFormat("#,###.00");
+        
+        jobs = new ArrayList<Job>();
+        employees = new ArrayList<Employee>();
+        
+        populateArrayList();
+        
+        String [] jobsArray = new String[jobs.size()] ;
+        
+        for (int i=0; i< jobs.size(); i++){
+            jobsArray[i] = jobs.get(i).getNameOfJob() + ", R" + formatter.format(jobs.get(i).getSalary());
+           
+        }
+            
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(jobsArray));
+        
+        String [] EmpArray = new String[employees.size()] ;
+        
+        for (int i=0; i< employees.size(); i++){
+            EmpArray[i] = employees.get(i).getName() + ", " + employees.get(i).getSurname();
+           
+        }
+            
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(EmpArray));
+        jComboBox2.setSelectedIndex(0);
     }
+    
+    
+    public void populateArrayList(){
+        try{
+            
+            FileInputStream file = new FileInputStream("Jobs.dat");
+            ObjectInputStream inputFile = new ObjectInputStream(file);
+            
+            // check if its not the end of file
+            boolean endOfFile = false;
+            
+            while(!endOfFile){
+                try{
+                    
+                    jobs.add((Job) inputFile.readObject());
+                
+                }catch(EOFException e){
+                    endOfFile = true;
+                    
+                }catch(Exception f){
+                    JOptionPane.showMessageDialog(null, f.getMessage());
+                }
+                
+            }
+            
+            inputFile.close();
+        
+        }catch (IOException e){
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        }
+        
+        try{
+            
+            FileInputStream file2 = new FileInputStream("Employees.dat");
+            ObjectInputStream inputFile2 = new ObjectInputStream(file2);
+            
+            // check if its not the end of file
+            boolean endOfFile = false;
+            
+            while(!endOfFile){
+                try{
+                    
+                    employees.add((Employee) inputFile2.readObject());
+                
+                }catch(EOFException e){
+                    endOfFile = true;
+                    
+                }catch(Exception f){
+                    JOptionPane.showMessageDialog(null, f.getMessage() + "test");
+                }
+                
+            }
+            
+            inputFile2.close();
+        
+        }catch (IOException e){
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        }
+    }
+    
+    public void saveEmployeesToFile(){
+        
+        try{
+            FileOutputStream file = new FileOutputStream("Employees.dat");
+            ObjectOutputStream outputFile = new ObjectOutputStream(file);
+            
+            for (int i=0; i< employees.size(); i++){
+                outputFile.writeObject(employees.get(i));
+            }
+            
+            outputFile.close();
+            JOptionPane.showMessageDialog(null, "Successfully saved!");
+            this.dispose();
+            
+        }catch (IOException e){
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        }
+        
+     }
+    
+    
+    public void saveEmployeesToFileDelete(){
+        
+        try{
+            FileOutputStream file = new FileOutputStream("Employees.dat");
+            ObjectOutputStream outputFile = new ObjectOutputStream(file);
+            
+            for (int i=0; i< employees.size(); i++){
+                outputFile.writeObject(employees.get(i));
+            }
+            
+            outputFile.close();
+            JOptionPane.showMessageDialog(null, "Successfully Deleted!");
+            this.dispose();
+            
+        }catch (IOException e){
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        }
+        
+     }
+    
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -85,8 +221,18 @@ public class EditEmployee extends javax.swing.JFrame {
         jLabel3.setText("Choose employee:");
 
         jButton2.setText("Save");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox2ActionPerformed(evt);
+            }
+        });
 
         jTextField7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -197,11 +343,56 @@ public class EditEmployee extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        
+        int selectedIndex = jComboBox2.getSelectedIndex();
+        employees.remove(selectedIndex);
+        saveEmployeesToFile();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jTextField7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField7ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField7ActionPerformed
+
+    private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
+        // TODO add your handling code here:
+        int selectedIndex = jComboBox2.getSelectedIndex();
+        jTextField5.setText(employees.get(selectedIndex).getName());
+        jTextField7.setText(employees.get(selectedIndex).getSurname());
+        jTextField6.setText(employees.get(selectedIndex).getStaffNr() + "");
+        
+        Job job = employees.get(selectedIndex).getJob();
+        int index = 0;
+        
+        for (int i=0; i< jobs.size(); i++){
+            if (jobs.get(i).equals(job)){
+                index = i;
+                break;
+            }
+        }
+        jComboBox1.setSelectedIndex(index);
+        
+        
+    }//GEN-LAST:event_jComboBox2ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        if (jTextField5.getText().isEmpty() || jTextField7.getText().isEmpty() ||
+                jTextField6.getText().isEmpty()){
+            JOptionPane.showMessageDialog(null, "Please enter all fields" );
+        }else {
+            int selectedIndex = jComboBox2.getSelectedIndex();
+            employees.get(selectedIndex).setName(jTextField5.getText().trim());
+            employees.get(selectedIndex).setSurname(jTextField7.getText().trim());
+            employees.get(selectedIndex).setStaffNr(Integer.parseInt(jTextField6.getText().trim()));
+            Job job = jobs.get(jComboBox1.getSelectedIndex());
+            employees.get(selectedIndex).setJob(job);
+            
+            saveEmployeesToFileDelete();
+            
+            
+        }
+        
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
