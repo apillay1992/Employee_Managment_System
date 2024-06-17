@@ -152,12 +152,14 @@ public class AddEmployee extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
         jLabel3.setText("Enter employee name:");
 
+        employeeNameTextField.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
         employeeNameTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 employeeNameTextFieldActionPerformed(evt);
             }
         });
 
+        employeeSurnameTextField.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
         employeeSurnameTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 employeeSurnameTextFieldActionPerformed(evt);
@@ -170,6 +172,7 @@ public class AddEmployee extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
         jLabel5.setText("Choose a job:");
 
+        staffNumberTextField.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
         staffNumberTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 staffNumberTextFieldActionPerformed(evt);

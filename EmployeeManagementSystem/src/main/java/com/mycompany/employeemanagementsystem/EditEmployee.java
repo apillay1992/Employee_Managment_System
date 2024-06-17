@@ -182,6 +182,7 @@ public class EditEmployee extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Liberation Sans", 3, 24)); // NOI18N
         jLabel1.setText("Edit Employee data");
 
+        jTextField5.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
         jTextField5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField5ActionPerformed(evt);
@@ -194,6 +195,7 @@ public class EditEmployee extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
         jLabel5.setText("Employee surname:");
 
+        jTextField6.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
         jTextField6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField6ActionPerformed(evt);
@@ -207,6 +209,7 @@ public class EditEmployee extends javax.swing.JFrame {
             }
         });
 
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/9004715_cross_delete_remove_cancel_icon.png"))); // NOI18N
         jButton1.setText("Delete");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -220,6 +223,7 @@ public class EditEmployee extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
         jLabel3.setText("Choose employee:");
 
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/79657_as_document_guardar_save_icon.png"))); // NOI18N
         jButton2.setText("Save");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -234,6 +238,7 @@ public class EditEmployee extends javax.swing.JFrame {
             }
         });
 
+        jTextField7.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
         jTextField7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField7ActionPerformed(evt);
@@ -321,7 +326,7 @@ public class EditEmployee extends javax.swing.JFrame {
                         .addContainerGap(94, Short.MAX_VALUE))))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                    .addContainerGap(392, Short.MAX_VALUE)
+                    .addContainerGap(388, Short.MAX_VALUE)
                     .addComponent(jButton2)
                     .addGap(26, 26, 26)))
         );

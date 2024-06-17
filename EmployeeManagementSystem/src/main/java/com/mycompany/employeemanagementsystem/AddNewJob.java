@@ -106,12 +106,14 @@ public class AddNewJob extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
         jLabel3.setText("Salary for the job");
 
+        jobSalary.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
         jobSalary.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jobSalaryActionPerformed(evt);
             }
         });
 
+        jobName.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
         jobName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jobNameActionPerformed(evt);
