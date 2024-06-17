@@ -3,12 +3,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package com.mycompany.employeemanagementsystem;
-
 import java.awt.Font;
 import java.io.EOFException;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -18,26 +18,28 @@ import javax.swing.table.JTableHeader;
  *
  * @author ashley
  */
-public class ViewEmployees extends javax.swing.JFrame {
-    
+public class ViewJobs extends javax.swing.JFrame {
     ArrayList<Job> jobs;
     ArrayList<Employee> employees;
+    DecimalFormat formatter;
+
 
     /**
-     * Creates new form ViewEmployees
+     * Creates new form ViewJobs
      */
-    public ViewEmployees() {
+    public ViewJobs() {
         initComponents();
+      
         jobs = new ArrayList<>(); // Initialize jobs ArrayList
         employees = new ArrayList<>(); // Initialize employees ArrayList
-        headerToBold();
         populateArrayList();
+        headerToBold();
         populateTable();
     }
     
     
     
-      public void populateArrayList(){
+    public void populateArrayList(){
         try{
             
             FileInputStream file = new FileInputStream("Jobs.dat");
@@ -96,19 +98,18 @@ public class ViewEmployees extends javax.swing.JFrame {
     }
     
     
-    public void populateTable() {
-    String columns[] = {"Staff Number", "Name", "Surname", "Job"};
+     public void populateTable() {
+    String columns[] = {"Job Title", "Salary"};
 
     // Check if employees list is not empty
-    if (!employees.isEmpty()) {
-        Object[][] data = new Object[employees.size()][columns.length];
-
-        for (int i = 0; i < employees.size(); i++) {
-            Employee emp = employees.get(i);
-            data[i][0] = emp.getStaffNr();   // Replace with actual method to get staff number
-            data[i][1] = emp.getName();     // Replace with actual method to get name
-            data[i][2] = emp.getSurname();  // Replace with actual method to get surname
-            data[i][3] = emp.getJob().getNameOfJob();      // Replace with actual method to get job
+    if (!jobs.isEmpty()) {
+        Object[][] data = new Object[jobs.size()][columns.length];
+        formatter = new DecimalFormat("#,###.00");
+        for (int i = 0; i < jobs.size(); i++) {
+            Job job = jobs.get(i);
+            data[i][0] = job.getNameOfJob();   // Replace with actual method to get staff number
+            data[i][1] = "R "+ formatter.format(job.getSalary());     // Replace with actual method to get name
+           
         }
 
         DefaultTableModel model = new DefaultTableModel(data, columns){
@@ -120,7 +121,7 @@ public class ViewEmployees extends javax.swing.JFrame {
         jTable1.setModel(model);
     } else {
         // If employees list is empty, display a message or handle as needed
-        JOptionPane.showMessageDialog(null, "Employees list is empty.");
+        JOptionPane.showMessageDialog(null, "Job list is empty.");
         // Optionally, you might want to clear the table or set default data
         DefaultTableModel emptyModel = new DefaultTableModel(new Object[][]{}, columns){
             @Override
@@ -129,14 +130,15 @@ public class ViewEmployees extends javax.swing.JFrame {
             }
         };
         jTable1.setModel(emptyModel);
+        }
     }
-}
-    
+     
     private void headerToBold(){
         JTableHeader head = jTable1.getTableHeader();
         head.setFont(new Font("Liberation Sans", Font.BOLD, 15));
     }
 
+    
     
 
     /**
@@ -148,26 +150,20 @@ public class ViewEmployees extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        jLabel1.setFont(new java.awt.Font("Liberation Sans", 3, 24)); // NOI18N
-        jLabel1.setText("View All Employees");
 
         jTable1.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+
             }
         ));
         jScrollPane1.setViewportView(jTable1);
@@ -180,26 +176,29 @@ public class ViewEmployees extends javax.swing.JFrame {
             }
         });
 
+        jLabel1.setFont(new java.awt.Font("Liberation Sans", 3, 24)); // NOI18N
+        jLabel1.setText("View All Jobs");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(227, 227, 227)
-                .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addComponent(jScrollPane1)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(181, Short.MAX_VALUE)
+                .addContainerGap(227, Short.MAX_VALUE)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 348, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(163, 163, 163))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(288, 288, 288)
+                .addComponent(jLabel1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(25, 25, 25)
+                .addContainerGap(19, Short.MAX_VALUE)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 365, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jButton1)
@@ -231,20 +230,20 @@ public class ViewEmployees extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ViewEmployees.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewJobs.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ViewEmployees.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewJobs.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ViewEmployees.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewJobs.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ViewEmployees.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewJobs.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ViewEmployees().setVisible(true);
+                new ViewJobs().setVisible(true);
             }
         });
     }
