@@ -97,7 +97,7 @@ public class EditEmployee extends javax.swing.JFrame {
                     endOfFile = true;
                     
                 }catch(Exception f){
-                    JOptionPane.showMessageDialog(null, f.getMessage() + "test");
+                    JOptionPane.showMessageDialog(null, f.getMessage());
                 }
                 
             }
