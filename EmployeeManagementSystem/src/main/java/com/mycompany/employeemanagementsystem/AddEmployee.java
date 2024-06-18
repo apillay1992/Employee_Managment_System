@@ -147,7 +147,7 @@ public class AddEmployee extends javax.swing.JFrame {
         jLabel1.setText("Add a new Employee by entering the data below");
 
         jLabel2.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
-        jLabel2.setText("Enter employee surnname:");
+        jLabel2.setText("Enter employee surname:");
 
         jLabel3.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
         jLabel3.setText("Enter employee name:");

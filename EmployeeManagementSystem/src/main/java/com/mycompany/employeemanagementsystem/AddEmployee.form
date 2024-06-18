@@ -117,7 +117,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Liberation Sans" size="15" style="1"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Enter employee surnname:"/>
+        <Property name="text" type="java.lang.String" value="Enter employee surname:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel3">

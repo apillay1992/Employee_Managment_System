@@ -11,6 +11,7 @@ package com.mycompany.employeemanagementsystem;
 public class EmployeeManagementSystem {
 
     public static void main(String[] args) {
-        new Menu().setVisible(true);
+        new LoginPage().setVisible(true);
+//        new Menu().setVisible(true);
     }
 }
