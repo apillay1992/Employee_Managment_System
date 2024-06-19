@@ -11,7 +11,7 @@ import java.io.*;
  * @author ashley
  */
 public class LoginPage extends javax.swing.JFrame {
-     ArrayList<User> users;
+     public static ArrayList<User> users;
     /**
      * Creates new form LoginPage
      */
@@ -217,6 +217,13 @@ public class LoginPage extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         
+        String enteredUsername = usernameTextField.getText();
+        String enteredPassword = new String(passwordTextField.getPassword()); // Convert char[] to String
+
+        // Debug: Print entered credentials
+        System.out.println("Entered Username: " + enteredUsername);
+        System.out.println("Entered Password: " + enteredPassword);
+        
         if (usernameTextField.getText().isEmpty() || passwordTextField.getText().isEmpty()) {
         JOptionPane.showMessageDialog(null, "Please enter all fields");
     } else {
@@ -224,9 +231,13 @@ public class LoginPage extends javax.swing.JFrame {
 
         // Check if the users ArrayList is empty
         if (users.isEmpty()) {
-            JOptionPane.showMessageDialog(null, "Incorrect username or password!");
+            JOptionPane.showMessageDialog(null, "empty!");
         } else {
             for (User user : users) {
+                System.out.println(user.getUsername());
+                System.out.println(user.getPassword());
+                        
+                      
                 if (user.getUsername().equals(usernameTextField.getText()) && user.getPassword().equals(passwordTextField.getText())) {
                     new Menu().setVisible(true);
                     dispose();

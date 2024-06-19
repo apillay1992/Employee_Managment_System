@@ -6,20 +6,20 @@ package com.mycompany.employeemanagementsystem;
 import javax.swing.*;
 import java.util.*;
 import java.io.*;
+import static com.mycompany.employeemanagementsystem.LoginPage.*;
 /**
  *
  * @author ashley
  */
 public class RegisterNewUser extends javax.swing.JFrame {
     
-    ArrayList<User> users;
+    
 
     /**
      * Creates new form RegisterNewUser
      */
     public RegisterNewUser() {
         initComponents();
-        users = new ArrayList<User>();
         populateArrayList();
         
     }
@@ -246,7 +246,7 @@ public class RegisterNewUser extends javax.swing.JFrame {
             User user = new User(name, surname, username, password);
             users.add(user);
             saveUsersToFile();
-            
+            dispose();
         }
         
 
