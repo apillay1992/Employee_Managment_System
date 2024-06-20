@@ -155,7 +155,7 @@ public class ViewJobs extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jTable1.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
