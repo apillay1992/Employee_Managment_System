@@ -15,12 +15,22 @@ public class Employee implements Serializable {
     private String surname;
     private Job job;
     private int staffNr;
+    private String email;
 
-    public Employee(String name, String surname, Job job, int staffNr) {
+    public Employee(String name, String surname, Job job, int staffNr, String email) {
         this.name = name;
         this.surname = surname;
         this.job = job;
         this.staffNr = staffNr;
+        this.email = email;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getName() {

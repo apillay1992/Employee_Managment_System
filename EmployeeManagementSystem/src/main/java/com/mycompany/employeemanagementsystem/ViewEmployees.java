@@ -97,7 +97,7 @@ public class ViewEmployees extends javax.swing.JFrame {
     
     
     public void populateTable() {
-    String columns[] = {"Staff Number", "Name", "Surname", "Job"};
+    String columns[] = {"Staff Number", "Name", "Surname", "Email", "Job"};
 
     // Check if employees list is not empty
     if (!employees.isEmpty()) {
@@ -108,7 +108,8 @@ public class ViewEmployees extends javax.swing.JFrame {
             data[i][0] = emp.getStaffNr();   // Replace with actual method to get staff number
             data[i][1] = emp.getName();     // Replace with actual method to get name
             data[i][2] = emp.getSurname();  // Replace with actual method to get surname
-            data[i][3] = emp.getJob().getNameOfJob();      // Replace with actual method to get job
+            data[i][3] = emp.getEmail();
+            data[i][4] = emp.getJob().getNameOfJob();      // Replace with actual method to get job
         }
 
         DefaultTableModel model = new DefaultTableModel(data, columns){

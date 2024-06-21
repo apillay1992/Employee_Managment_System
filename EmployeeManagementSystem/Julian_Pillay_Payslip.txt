@@ -1,17 +1,17 @@
 -----------------------------------------
-        Mock Company Pty Ltd
+        Apex Innovation Pty Ltd
        123 Mock Street, Mocktown
 -----------------------------------------
-Employee Number: 1
-Name: Tom Smith
-Job Title: Sales
+Employee Number: 3
+Name: Julian Pillay
+Job Title: Admin
 -----------------------------------------
 Earnings:
-Gross Salary: R12,000.00
+Gross Salary: R7,000.00
 -----------------------------------------
 Deductions:
-Tax: R1,800.00
-UIF: R120.00
+Tax: R1,050.00
+UIF: R70.00
 -----------------------------------------
-Net Pay: R10,080.00
+Net Pay: R5,880.00
 -----------------------------------------
