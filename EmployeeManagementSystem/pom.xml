@@ -11,4 +11,27 @@
         <maven.compiler.target>22</maven.compiler.target>
         <exec.mainClass>com.mycompany.employeemanagementsystem.EmployeeManagementSystem</exec.mainClass>
     </properties>
+    
+    <dependencies>
+        <dependency>
+            <groupId>javax.mail</groupId>
+            <artifactId>javax.mail-api</artifactId>
+            <version>1.6.2</version>
+        </dependency>
+        
+        <dependency>
+            <groupId>com.sun.mail</groupId>
+            <artifactId>javax.mail</artifactId>
+            <version>1.6.2</version> 
+        </dependency>
+    </dependencies>
+    
+    <repositories>
+        <repository>
+            <id>central</id>
+            <name>Maven Central Repository</name>
+            <url>https://repo.maven.apache.org/maven2</url>
+        </repository>
+    </repositories>
+    
 </project>

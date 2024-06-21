@@ -7,6 +7,15 @@ import javax.swing.*;
 import java.util.*;
 import java.io.*;
 import java.text.*;
+import javax.mail.*;
+import javax.mail.internet.*;
+
+import javax.mail.*; 
+import javax.mail.internet.*; 
+import javax.activation.*; 
+import javax.mail.Session; 
+import javax.mail.Transport; 
+  
 /**
  *
  * @author ashley
@@ -98,8 +107,6 @@ public class GeneratePayslip extends javax.swing.JFrame {
     }
     
    
-    
-  
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -264,11 +271,13 @@ public class GeneratePayslip extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         // Generating payslips for each employee
+        int selectedIndex = jComboBox2.getSelectedIndex();
         for (Employee emp : employees) {
             String jobTitle = emp.getJob().getNameOfJob();
             Job job = findJob(jobTitle, jobs);
 
-            if (job != null) {
+            if (employees.get(selectedIndex).getName().equals(emp.getName()) && 
+                    employees.get(selectedIndex).getJob().getNameOfJob().equals(emp.getJob().getNameOfJob())) {
                 generatePaySlip(emp, job);
             }
         }
@@ -321,6 +330,8 @@ public class GeneratePayslip extends javax.swing.JFrame {
         try (FileWriter writer = new FileWriter(fileName)) {
             writer.write(payslipContent);
             System.out.println("Generated Payslip for: " + emp.getName() + " " + emp.getSurname());
+            // Send payslip via email
+            sendEmail(emp.getName(), emp.getSurname(), fileName);
             JOptionPane.showMessageDialog(null, "Payslip generated successfully for " + emp.getName() + " " + emp.getSurname());
         } catch (IOException e) {
             JOptionPane.showMessageDialog(null, "Failed to generate payslip for " + emp.getName() + " " + emp.getSurname() + "!");
@@ -343,6 +354,68 @@ public class GeneratePayslip extends javax.swing.JFrame {
         return 0.01 * salary;
     }
     
+    // Method to send email with payslip as attachment
+    private void sendEmail(String recipientName, String recipientSurname, String payslipFilePath) {
+        // Sender's email address and password
+        String senderEmail = "apexinnovationspayrollteam@gmail.com"; // Replace with your email
+        String senderPassword = "ylhb crgc ryaz vgar"; // Replace with your password
+
+        // Recipient's email address
+        String recipientEmail = "apillay023@student.wethinkcode.co.za"; // Replace with recipient's email
+
+        // Setup mail server properties
+        Properties properties = new Properties();
+        properties.put("mail.smtp.auth", "true");
+        properties.put("mail.smtp.starttls.enable", "true");
+        properties.put("mail.smtp.host", "smtp.gmail.com"); // Replace with your SMTP server address
+        properties.put("mail.smtp.port", "587"); // Replace with your SMTP server port
+
+        // Get the Session object
+        Session session = Session.getInstance(properties, new Authenticator() {
+            @Override
+            protected PasswordAuthentication getPasswordAuthentication() {
+                return new PasswordAuthentication(senderEmail, senderPassword);
+            }
+        });
+
+        try {
+            // Create a new message
+            Message message = new MimeMessage(session);
+
+            // Set sender and recipient addresses
+            message.setFrom(new InternetAddress(senderEmail));
+            message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(recipientEmail));
+
+            // Set email subject
+            message.setSubject("Payslip for " + recipientName + " " + recipientSurname);
+
+            // Create the message body part
+            BodyPart messageBodyPart = new MimeBodyPart();
+            messageBodyPart.setText("Dear " + recipientName + ",\n\nPlease find attached your payslip.\n\nRegards,\nMock Company Pty Ltd");
+
+            // Create the attachment
+            MimeBodyPart attachmentBodyPart = new MimeBodyPart();
+            attachmentBodyPart.attachFile(new File(payslipFilePath));
+
+            // Create multipart to combine message and attachment
+            Multipart multipart = new MimeMultipart();
+            multipart.addBodyPart(messageBodyPart);
+            multipart.addBodyPart(attachmentBodyPart);
+
+            // Set the content of the message
+            message.setContent(multipart);
+
+            // Send the message
+            Transport.send(message);
+
+            System.out.println("Email with payslip sent successfully to " + recipientEmail);
+        } catch (MessagingException | IOException e) {
+            System.err.println("Failed to send email with payslip: " + e.getMessage());
+        }
+    }
+
+
+    
     
     
     private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
@@ -357,8 +430,6 @@ public class GeneratePayslip extends javax.swing.JFrame {
         jobDisplay.setText(employees.get(selectedIndex).getJob().getNameOfJob());
         jobDisplay.setEditable(false);
         
-      
-
     }//GEN-LAST:event_jComboBox2ActionPerformed
 
     private void jTextField7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField7ActionPerformed
