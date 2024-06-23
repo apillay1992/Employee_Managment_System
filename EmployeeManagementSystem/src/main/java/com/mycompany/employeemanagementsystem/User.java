@@ -14,15 +14,25 @@ public class User implements Serializable {
     
     private String name;
     private String surname;
+    private String securityQuestion;
     private String username;
     private String password;
     
-    public User(String name, String surname, String username, String password){
+    public User(String name, String surname, String securityQuestion, String username, String password){
         this.name = name;
         this.surname = surname;
+        this.securityQuestion = securityQuestion;
         this.username = username;
         this.password = password;
        
+    }
+
+    public String getSecurityQuestion() {
+        return securityQuestion;
+    }
+
+    public void setSecurityQuestion(String securityQuestion) {
+        this.securityQuestion = securityQuestion;
     }
 
     public String getName() {
