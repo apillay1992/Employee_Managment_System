@@ -12,6 +12,7 @@ import java.io.*;
  */
 public class LoginPage extends javax.swing.JFrame {
      public static ArrayList<User> users;
+     public static ArrayList<String> currentUserDetails = new ArrayList<String>();
     /**
      * Creates new form LoginPage
      */
@@ -273,6 +274,9 @@ public class LoginPage extends javax.swing.JFrame {
                         
                       
                 if (user.getUsername().equals(usernameTextField.getText()) && user.getPassword().equals(passwordTextField.getText())) {
+                    currentUserDetails.add(user.getName());
+                    currentUserDetails.add(user.getSurname());
+               
                     new Menu().setVisible(true);
                     dispose();
                     found = true;
