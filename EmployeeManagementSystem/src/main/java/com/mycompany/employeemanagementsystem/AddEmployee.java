@@ -198,6 +198,8 @@ public class AddEmployee extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
         jLabel6.setText("Enter email address:");
 
+        jTextField1.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
