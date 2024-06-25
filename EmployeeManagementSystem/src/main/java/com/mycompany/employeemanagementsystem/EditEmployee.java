@@ -423,6 +423,36 @@ public class EditEmployee extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
 
+    public ArrayList<Job> getJobs() {
+        return new ArrayList<>(jobs); // Return a copy to preserve encapsulation
+    }
+
+    public ArrayList<Employee> getEmployees() {
+        return new ArrayList<>(employees); // Return a copy to preserve encapsulation
+    }
+
+    public DecimalFormat getFormatter() {
+        return (DecimalFormat) formatter.clone(); // Return a clone to preserve encapsulation
+    }
+     // Add these methods to clear and add data for testing
+    public void clearJobs() {
+        jobs.clear();
+    }
+
+    public void clearEmployees() {
+        employees.clear();
+    }
+
+    public void addJob(Job job) {
+        jobs.add(job);
+    }
+
+    public void addEmployee(Employee employee) {
+        employees.add(employee);
+    }
+
+
+   
     /**
      * @param args the command line arguments
      */
