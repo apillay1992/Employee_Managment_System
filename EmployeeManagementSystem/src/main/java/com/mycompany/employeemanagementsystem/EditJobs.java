@@ -315,6 +315,33 @@ public class EditJobs extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField6ActionPerformed
 
+    public ArrayList<Job> getJobs() {
+        return new ArrayList<>(jobs);
+    }
+
+    public ArrayList<Employee> getEmployees() {
+        return new ArrayList<>(employees);
+    }
+
+    public DecimalFormat getFormatter() {
+        return (DecimalFormat) formatter.clone();
+    }
+
+    public void clearJobs() {
+        jobs.clear();
+    }
+
+    public void addJob(Job job) {
+        jobs.add(job);
+    }
+    
+     public void removeJob(int index) {
+        if (index >= 0 && index < jobs.size()) {
+            jobs.remove(index);
+        }
+    }
+
+   
     /**
      * @param args the command line arguments
      */
