@@ -305,10 +305,42 @@ public class AddEmployee extends javax.swing.JFrame {
             
             saveEmployeesToFile();
         }
-            
-
+        
+        
+        
+       
     }//GEN-LAST:event_jButton1ActionPerformed
     
+    
+        public JTextField getEmployeeNameTextField() {
+            return employeeNameTextField;
+        }
+
+        public JTextField getEmployeeSurnameTextField() {
+            return employeeSurnameTextField;
+        }
+
+        public JTextField getStaffNumberTextField() {
+            return staffNumberTextField;
+        }
+
+        public JTextField getEmailTextField() {
+            return jTextField1;
+        }
+
+        public JComboBox<String> getJobComboBox() {
+            return jComboBox1;
+        }
+
+        public JButton getSaveButton() {
+            return jButton1;
+        }
+
+        public ArrayList<Employee> getEmployees() {
+            return employees;
+        }
+            
+
     /**
      * @param args the command line arguments
      */
