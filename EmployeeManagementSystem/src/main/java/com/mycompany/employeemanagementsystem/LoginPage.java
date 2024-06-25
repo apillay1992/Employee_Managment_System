@@ -308,6 +308,14 @@ public class LoginPage extends javax.swing.JFrame {
         // TODO add your handling code here:
         new ResetUsernamePassword().setVisible(true);
     }//GEN-LAST:event_jButton3ActionPerformed
+    
+    public JTextField getUsernameTextField() {
+        return usernameTextField;
+    }
+
+    public JPasswordField getPasswordTextField() {
+        return passwordTextField;
+    }
 
     /**
      * @param args the command line arguments
