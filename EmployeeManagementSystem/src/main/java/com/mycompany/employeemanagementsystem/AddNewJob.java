@@ -192,7 +192,22 @@ public class AddNewJob extends javax.swing.JFrame {
         
          
     }//GEN-LAST:event_jButton1ActionPerformed
+    
+    // Getters for GUI components
 
+    public JTextField getJobName() {
+        return jobName;
+    }
+
+    public JTextField getJobSalary() {
+        return jobSalary;
+    }
+
+    public JButton getSaveButton() {
+        return jButton1;
+    }
+
+    
     /**
      * @param args the command line arguments
      */

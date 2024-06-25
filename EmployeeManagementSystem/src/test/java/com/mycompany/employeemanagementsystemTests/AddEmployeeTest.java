@@ -5,8 +5,6 @@
 package com.mycompany.employeemanagementsystemTests;
 
 import com.mycompany.employeemanagementsystem.AddEmployee;
-import javax.swing.JTextField;
-import javax.swing.JComboBox;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 /**
