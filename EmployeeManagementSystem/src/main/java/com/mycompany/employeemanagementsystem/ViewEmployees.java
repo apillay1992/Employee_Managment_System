@@ -4,6 +4,7 @@
  */
 package com.mycompany.employeemanagementsystem;
 
+import java.awt.Component;
 import java.awt.Font;
 import java.io.EOFException;
 import java.io.FileInputStream;
@@ -13,6 +14,8 @@ import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.JTableHeader;
+import javax.swing.table.TableCellRenderer;
+import javax.swing.table.TableColumnModel;
 
 /**
  *
@@ -119,6 +122,7 @@ public class ViewEmployees extends javax.swing.JFrame {
             }
         };
         jTable1.setModel(model);
+        adjustColumnWidths();
     } else {
         // If employees list is empty, display a message or handle as needed
         JOptionPane.showMessageDialog(null, "Employees list is empty.");
@@ -130,6 +134,22 @@ public class ViewEmployees extends javax.swing.JFrame {
             }
         };
         jTable1.setModel(emptyModel);
+    }
+}
+    
+    
+    private void adjustColumnWidths() {
+    TableColumnModel columnModel = jTable1.getColumnModel();
+    for (int column = 0; column < jTable1.getColumnCount(); column++) {
+        int width = 15; // Min width
+        for (int row = 0; row < jTable1.getRowCount(); row++) {
+            TableCellRenderer renderer = jTable1.getCellRenderer(row, column);
+            Component comp = jTable1.prepareRenderer(renderer, row, column);
+            width = Math.max(comp.getPreferredSize().width +1 , width);
+        }
+        if(width > 300)
+            width = 300;
+        columnModel.getColumn(column).setPreferredWidth(width);
     }
 }
     
@@ -185,26 +205,27 @@ public class ViewEmployees extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(227, 227, 227)
-                .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addComponent(jScrollPane1)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(181, Short.MAX_VALUE)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 348, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(163, 163, 163))
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(345, 345, 345)
+                        .addComponent(jLabel1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(292, 292, 292)
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 348, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(303, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(25, 25, 25)
+                .addContainerGap(29, Short.MAX_VALUE)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 365, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 365, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(26, 26, 26)
                 .addComponent(jButton1)
-                .addGap(26, 26, 26))
+                .addGap(18, 18, 18))
         );
 
         pack();
