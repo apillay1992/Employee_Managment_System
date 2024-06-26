@@ -263,10 +263,6 @@ public class LoginPage extends javax.swing.JFrame {
         
         String enteredUsername = usernameTextField.getText();
         String enteredPassword = new String(passwordTextField.getPassword()); // Convert char[] to String
-
-        // Debug: Print entered credentials
-        System.out.println("Entered Username: " + enteredUsername);
-        System.out.println("Entered Password: " + enteredPassword);
         
         if (usernameTextField.getText().isEmpty() || passwordTextField.getText().isEmpty()) {
         JOptionPane.showMessageDialog(null, "Please enter all fields");
@@ -278,14 +274,10 @@ public class LoginPage extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "empty!");
         } else {
             for (User user : users) {
-                System.out.println(user.getUsername());
-                System.out.println(user.getPassword());
-                        
                       
                 if (user.getUsername().equals(usernameTextField.getText()) && user.getPassword().equals(passwordTextField.getText())) {
                     currentUserDetails.add(user.getName());
                     currentUserDetails.add(user.getSurname());
-               
                     new Menu().setVisible(true);
                     dispose();
                     found = true;

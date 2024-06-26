@@ -174,6 +174,7 @@ public class RegisterNewUser extends javax.swing.JFrame {
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "What is your first school name?", "What is your first pet's name?", "What is your favourite food? ", "What is mother's maiden name?" }));
 
+        jTextField1.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1ActionPerformed(evt);

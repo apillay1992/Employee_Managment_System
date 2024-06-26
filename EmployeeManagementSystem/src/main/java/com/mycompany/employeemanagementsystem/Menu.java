@@ -435,6 +435,7 @@ public class Menu extends javax.swing.JFrame {
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         // TODO add your handling code here:
+        currentUserDetails.clear();
         dispose();
     }//GEN-LAST:event_jButton6ActionPerformed
 
@@ -475,6 +476,7 @@ public class Menu extends javax.swing.JFrame {
 
     private void logoutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutButtonActionPerformed
         // TODO add your handling code here:
+        currentUserDetails.clear();
         dispose();
         new LoginPage().setVisible(true);
     }//GEN-LAST:event_logoutButtonActionPerformed
