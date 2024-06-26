@@ -100,7 +100,7 @@ public class ViewEmployees extends javax.swing.JFrame {
     
     
     public void populateTable() {
-    String columns[] = {"Staff Number", "Name", "Surname", "Email", "Job"};
+    String columns[] = {"Staff Number", "Name", "Surname", "Email", "Address", "Contact No.", "Emergency Contact No.", "Hightest Qualification", "Job"};
 
     // Check if employees list is not empty
     if (!employees.isEmpty()) {
@@ -108,11 +108,15 @@ public class ViewEmployees extends javax.swing.JFrame {
 
         for (int i = 0; i < employees.size(); i++) {
             Employee emp = employees.get(i);
-            data[i][0] = emp.getStaffNr();   // Replace with actual method to get staff number
-            data[i][1] = emp.getName();     // Replace with actual method to get name
-            data[i][2] = emp.getSurname();  // Replace with actual method to get surname
+            data[i][0] = emp.getStaffNr();   
+            data[i][1] = emp.getName();     
+            data[i][2] = emp.getSurname();  
             data[i][3] = emp.getEmail();
-            data[i][4] = emp.getJob().getNameOfJob();      // Replace with actual method to get job
+            data[i][4] = emp.getAddress();
+            data[i][5] = emp.getContactNumber();
+            data[i][6] = emp.getEmergencyContactNumber();
+            data[i][7] = emp.getHighestQualification();
+            data[i][8] = emp.getJob().getNameOfJob();      
         }
 
         DefaultTableModel model = new DefaultTableModel(data, columns){
@@ -209,23 +213,23 @@ public class ViewEmployees extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(345, 345, 345)
+                        .addGap(659, 659, 659)
                         .addComponent(jLabel1))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(292, 292, 292)
+                        .addGap(593, 593, 593)
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 348, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(303, Short.MAX_VALUE))
+                .addContainerGap(624, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(29, Short.MAX_VALUE)
+                .addGap(39, 39, 39)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 365, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26)
+                .addGap(18, 18, 18)
                 .addComponent(jButton1)
-                .addGap(18, 18, 18))
+                .addGap(26, 26, 26))
         );
 
         pack();
