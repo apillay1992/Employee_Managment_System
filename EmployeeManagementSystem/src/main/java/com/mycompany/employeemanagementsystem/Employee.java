@@ -16,13 +16,53 @@ public class Employee implements Serializable {
     private Job job;
     private int staffNr;
     private String email;
+    private String address;
+    private String contactNumber;
+    private String emergencyContactNumber;
+    private String highestQualification;
 
-    public Employee(String name, String surname, Job job, int staffNr, String email) {
+    public Employee(String name, String surname, Job job, int staffNr, String email, String address, String contactNumber, String emergencyContactNumber, String hightestQualification)  {
         this.name = name;
         this.surname = surname;
         this.job = job;
         this.staffNr = staffNr;
         this.email = email;
+        this.address = address;
+        this.contactNumber = contactNumber;
+        this.emergencyContactNumber = emergencyContactNumber;
+        this.highestQualification = hightestQualification;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getContactNumber() {
+        return contactNumber;
+    }
+
+    public void setContactNumber(String contactNumber) {
+        this.contactNumber = contactNumber;
+    }
+
+    public String getEmergencyContactNumber() {
+        return emergencyContactNumber;
+    }
+
+    public void setEmergencyContactNumber(String emergencyContactNumber) {
+        this.emergencyContactNumber = emergencyContactNumber;
+    }
+
+    public String getHighestQualification() {
+        return highestQualification;
+    }
+
+    public void setHighestQualification(String highestQualification) {
+        this.highestQualification = highestQualification;
     }
 
     public String getEmail() {

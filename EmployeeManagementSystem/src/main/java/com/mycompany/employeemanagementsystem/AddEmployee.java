@@ -119,7 +119,6 @@ public class AddEmployee extends javax.swing.JFrame {
      }
     
     
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -141,6 +140,14 @@ public class AddEmployee extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
+        employeeAddressLabel = new javax.swing.JLabel();
+        employeeAddressTextField = new javax.swing.JTextField();
+        contactNumberLabel = new javax.swing.JLabel();
+        emergencyContactNumberLabel = new javax.swing.JLabel();
+        heighestQualificationLabel = new javax.swing.JLabel();
+        contactNumberTextField = new javax.swing.JTextField();
+        emergencyContactTextField = new javax.swing.JTextField();
+        heighestQualificationTextField = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Add New Employee");
@@ -149,10 +156,10 @@ public class AddEmployee extends javax.swing.JFrame {
         jLabel1.setText("Add a new Employee by entering the data below");
 
         jLabel2.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
-        jLabel2.setText("Enter employee surname:");
+        jLabel2.setText("Employee surname:");
 
         jLabel3.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
-        jLabel3.setText("Enter employee name:");
+        jLabel3.setText("Employee name:");
 
         employeeNameTextField.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
         employeeNameTextField.addActionListener(new java.awt.event.ActionListener() {
@@ -196,46 +203,74 @@ public class AddEmployee extends javax.swing.JFrame {
         });
 
         jLabel6.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
-        jLabel6.setText("Enter email address:");
+        jLabel6.setText("Email address:");
 
         jTextField1.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
+
+        employeeAddressLabel.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
+        employeeAddressLabel.setText("Physical address:");
+
+        employeeAddressTextField.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
+
+        contactNumberLabel.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
+        contactNumberLabel.setText("Contact number:");
+
+        emergencyContactNumberLabel.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
+        emergencyContactNumberLabel.setText("Emergency contact number:");
+
+        heighestQualificationLabel.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
+        heighestQualificationLabel.setText("Heightest qualification:");
+
+        contactNumberTextField.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
+
+        emergencyContactTextField.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
+
+        heighestQualificationTextField.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(60, 60, 60)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 523, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(58, 58, 58)
-                        .addComponent(jLabel1)))
+                .addGap(58, 58, 58)
+                .addComponent(jLabel1)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 523, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(69, 69, 69))
             .addGroup(layout.createSequentialGroup()
                 .addGap(29, 29, 29)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jLabel4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(staffNumberTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 379, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 379, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 228, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 233, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(employeeNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 379, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel6))
+                            .addComponent(jLabel6)
+                            .addComponent(contactNumberLabel)
+                            .addComponent(heighestQualificationLabel)
+                            .addComponent(emergencyContactNumberLabel)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(employeeAddressLabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(employeeSurnameTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 379, Short.MAX_VALUE)
-                            .addComponent(jTextField1))))
+                            .addComponent(jTextField1)
+                            .addComponent(employeeAddressTextField)
+                            .addComponent(contactNumberTextField)
+                            .addComponent(emergencyContactTextField)
+                            .addComponent(heighestQualificationTextField)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 379, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(25, 25, 25))
         );
         layout.setVerticalGroup(
@@ -257,13 +292,29 @@ public class AddEmployee extends javax.swing.JFrame {
                     .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(25, 25, 25)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(employeeAddressLabel)
+                    .addComponent(employeeAddressTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(26, 26, 26)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(contactNumberLabel)
+                    .addComponent(contactNumberTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(25, 25, 25)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(emergencyContactNumberLabel)
+                    .addComponent(emergencyContactTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(28, 28, 28)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(heighestQualificationLabel)
+                    .addComponent(heighestQualificationTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(26, 26, 26)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
+                .addGap(20, 20, 20)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(staffNumberTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(33, 33, 33)
+                    .addComponent(staffNumberTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
                 .addComponent(jButton1)
                 .addGap(33, 33, 33))
         );
@@ -290,7 +341,9 @@ public class AddEmployee extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         if (employeeNameTextField.getText().isEmpty() || employeeSurnameTextField.getText().isEmpty() ||
-                staffNumberTextField.getText().isEmpty()){
+                staffNumberTextField.getText().isEmpty() || employeeAddressTextField.getText().isEmpty() ||
+                contactNumberTextField.getText().isEmpty() || emergencyContactTextField.getText().isEmpty() ||
+                heighestQualificationTextField.getText().isEmpty()){
             JOptionPane.showMessageDialog(null, "Please enter all fields" );
         }else {
             String name = employeeNameTextField.getText().trim();
@@ -299,16 +352,17 @@ public class AddEmployee extends javax.swing.JFrame {
             Job job = jobs.get(jobIndex);
             int staffNr  = Integer.parseInt(staffNumberTextField.getText().trim());
             String email = jTextField1.getText().trim();
-            Employee employee = new Employee(name, surname, job, staffNr, email);
+            String address = employeeAddressTextField.getText().trim();
+            String contactNumber = contactNumberTextField.getText().trim();
+            String emergencyContactNumber = emergencyContactTextField.getText().trim();
+            String heighestQualification = heighestQualificationTextField.getText().trim();
+            Employee employee = new Employee(name, surname, job, staffNr, email, address, contactNumber, emergencyContactNumber, heighestQualification);
             
             employees.add(employee);
             
             saveEmployeesToFile();
         }
         
-        
-        
-       
     }//GEN-LAST:event_jButton1ActionPerformed
     
     
@@ -377,8 +431,16 @@ public class AddEmployee extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel contactNumberLabel;
+    private javax.swing.JTextField contactNumberTextField;
+    private javax.swing.JLabel emergencyContactNumberLabel;
+    private javax.swing.JTextField emergencyContactTextField;
+    private javax.swing.JLabel employeeAddressLabel;
+    private javax.swing.JTextField employeeAddressTextField;
     private javax.swing.JTextField employeeNameTextField;
     private javax.swing.JTextField employeeSurnameTextField;
+    private javax.swing.JLabel heighestQualificationLabel;
+    private javax.swing.JTextField heighestQualificationTextField;
     private javax.swing.JButton jButton1;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;

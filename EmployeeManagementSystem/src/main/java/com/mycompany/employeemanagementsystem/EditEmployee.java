@@ -177,6 +177,14 @@ public class EditEmployee extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
+        addressLabel = new javax.swing.JLabel();
+        contactNumberLabel = new javax.swing.JLabel();
+        emergencyContactNumberLabel = new javax.swing.JLabel();
+        heigestQualificationLabel = new javax.swing.JLabel();
+        addressTextField = new javax.swing.JTextField();
+        contactNumberTextField = new javax.swing.JTextField();
+        emergencyContactNumberTextField = new javax.swing.JTextField();
+        heighestQualificationTextField = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Edit Employee Data");
@@ -195,7 +203,7 @@ public class EditEmployee extends javax.swing.JFrame {
         jLabel4.setText("Employee staff number:");
 
         jLabel5.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
-        jLabel5.setText("Employee surname:");
+        jLabel5.setText("Surname:");
 
         jTextField6.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
         jTextField6.addActionListener(new java.awt.event.ActionListener() {
@@ -221,7 +229,7 @@ public class EditEmployee extends javax.swing.JFrame {
         });
 
         jLabel2.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
-        jLabel2.setText("Employee name:");
+        jLabel2.setText("Name:");
 
         jLabel3.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
         jLabel3.setText("Choose employee:");
@@ -253,7 +261,7 @@ public class EditEmployee extends javax.swing.JFrame {
         jLabel6.setText("Employee job:");
 
         jLabel7.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
-        jLabel7.setText("Employee email:");
+        jLabel7.setText("Email:");
 
         jTextField1.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
@@ -261,6 +269,26 @@ public class EditEmployee extends javax.swing.JFrame {
                 jTextField1ActionPerformed(evt);
             }
         });
+
+        addressLabel.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
+        addressLabel.setText("Physical address:");
+
+        contactNumberLabel.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
+        contactNumberLabel.setText("Contact number:");
+
+        emergencyContactNumberLabel.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
+        emergencyContactNumberLabel.setText("Emergency contact number:");
+
+        heigestQualificationLabel.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
+        heigestQualificationLabel.setText("HeighestQualification:");
+
+        addressTextField.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
+
+        contactNumberTextField.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
+
+        emergencyContactNumberTextField.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
+
+        heighestQualificationTextField.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -275,15 +303,15 @@ public class EditEmployee extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
-                .addGap(29, 29, 29)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 379, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 290, Short.MAX_VALUE)
+                            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 296, Short.MAX_VALUE)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel2)
                                 .addGap(0, 0, Short.MAX_VALUE)))
@@ -291,22 +319,31 @@ public class EditEmployee extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jTextField5, javax.swing.GroupLayout.DEFAULT_SIZE, 379, Short.MAX_VALUE)
                             .addComponent(jComboBox2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel7)
-                            .addComponent(jLabel6)
-                            .addComponent(jLabel4))
+                            .addComponent(addressLabel)
+                            .addComponent(jLabel4)
+                            .addComponent(contactNumberLabel)
+                            .addComponent(emergencyContactNumberLabel)
+                            .addComponent(heigestQualificationLabel)
+                            .addComponent(jLabel6))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 379, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 379, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(heighestQualificationTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 379, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(emergencyContactNumberTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 379, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 379, Short.MAX_VALUE)
+                                .addComponent(jTextField6, javax.swing.GroupLayout.DEFAULT_SIZE, 379, Short.MAX_VALUE)
+                                .addComponent(addressTextField)
+                                .addComponent(contactNumberTextField))
                             .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 379, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(13, 13, 13))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(79, 79, 79)
                     .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 259, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(379, Short.MAX_VALUE)))
+                    .addContainerGap(376, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -325,28 +362,40 @@ public class EditEmployee extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addGap(26, 26, 26)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel7)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jButton1)
-                        .addGap(28, 28, 28))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(21, 21, 21)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(81, Short.MAX_VALUE))))
+                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel7))
+                .addGap(30, 30, 30)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(addressLabel)
+                    .addComponent(addressTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(35, 35, 35)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(contactNumberTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(contactNumberLabel))
+                .addGap(32, 32, 32)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(emergencyContactNumberLabel)
+                    .addComponent(emergencyContactNumberTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(39, 39, 39)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(heigestQualificationLabel)
+                    .addComponent(heighestQualificationTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(36, 36, 36)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(37, 37, 37)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 94, Short.MAX_VALUE)
+                .addComponent(jButton1)
+                .addGap(28, 28, 28))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                    .addContainerGap(388, Short.MAX_VALUE)
+                    .addContainerGap(729, Short.MAX_VALUE)
                     .addComponent(jButton2)
                     .addGap(26, 26, 26)))
         );
@@ -385,7 +434,10 @@ public class EditEmployee extends javax.swing.JFrame {
         jTextField7.setText(employees.get(selectedIndex).getSurname());
         jTextField1.setText(employees.get(selectedIndex).getEmail());
         jTextField6.setText(employees.get(selectedIndex).getStaffNr() + "");
-        
+        addressTextField.setText(employees.get(selectedIndex).getAddress());
+        contactNumberTextField.setText(employees.get(selectedIndex).getContactNumber());
+        emergencyContactNumberTextField.setText(employees.get(selectedIndex).getEmergencyContactNumber());
+        heighestQualificationTextField.setText(employees.get(selectedIndex).getHighestQualification());
         Job job = employees.get(selectedIndex).getJob();
         int index = 0;
         
@@ -402,8 +454,9 @@ public class EditEmployee extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        if (jTextField5.getText().isEmpty() || jTextField7.getText().isEmpty() ||
-                jTextField6.getText().isEmpty()){
+        if (jTextField5.getText().isEmpty() || jTextField7.getText().isEmpty() || jTextField6.getText().isEmpty() ||
+                addressTextField.getText().isEmpty() || contactNumberTextField.getText().isEmpty() || emergencyContactNumberTextField.getText().isEmpty()||
+                heighestQualificationTextField.getText().isEmpty()){
             JOptionPane.showMessageDialog(null, "Please enter all fields" );
         }else {
             int selectedIndex = jComboBox2.getSelectedIndex();
@@ -411,9 +464,12 @@ public class EditEmployee extends javax.swing.JFrame {
             employees.get(selectedIndex).setSurname(jTextField7.getText().trim());
             employees.get(selectedIndex).setEmail(jTextField1.getText().trim());
             employees.get(selectedIndex).setStaffNr(Integer.parseInt(jTextField6.getText().trim()));
+            employees.get(selectedIndex).setAddress(addressTextField.getText().trim());
+            employees.get(selectedIndex).setContactNumber(contactNumberTextField.getText().trim());
+            employees.get(selectedIndex).setEmergencyContactNumber(emergencyContactNumberTextField.getText().trim());
+            employees.get(selectedIndex).setHighestQualification(heighestQualificationTextField.getText().trim());
             Job job = jobs.get(jComboBox1.getSelectedIndex());
             employees.get(selectedIndex).setJob(job);
-            
             saveEmployeesToFileDelete();
         }
         
@@ -489,6 +545,14 @@ public class EditEmployee extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel addressLabel;
+    private javax.swing.JTextField addressTextField;
+    private javax.swing.JLabel contactNumberLabel;
+    private javax.swing.JTextField contactNumberTextField;
+    private javax.swing.JLabel emergencyContactNumberLabel;
+    private javax.swing.JTextField emergencyContactNumberTextField;
+    private javax.swing.JLabel heigestQualificationLabel;
+    private javax.swing.JTextField heighestQualificationTextField;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JComboBox<String> jComboBox1;

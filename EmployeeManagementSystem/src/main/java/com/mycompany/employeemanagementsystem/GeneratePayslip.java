@@ -131,7 +131,6 @@ public class GeneratePayslip extends javax.swing.JFrame {
         jTextField1 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(717, 442));
 
         jButton2.setText("Generate");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
