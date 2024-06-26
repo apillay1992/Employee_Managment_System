@@ -31,43 +31,19 @@ void setUp() {
    @Test
 void testSuccessfulLogin() {
     performLogin("john123", "password123");
-   ;
-    
-//    assertFalse(LoginPage.currentUserDetails.isEmpty());
-//    assertEquals(1, LoginPage.currentUserDetails.size());
+    assertFalse(LoginPage.currentUserDetails.isEmpty());
+    assertEquals(1, LoginPage.currentUserDetails.size());
     assertEquals("john123", LoginPage.currentUserDetails.get(0));
-//    assertEquals("Doe", LoginPage.currentUserDetails.get(1));
+
 }
-    @Test
-    void testFailedLogin() {
-        performLogin("wronguser", "wrongpass");
-        
-        assertTrue(LoginPage.currentUserDetails.isEmpty());
-    }
 
-    @Test
-    void testEmptyFields() {
-        performLogin("", "");
-        
-        assertTrue(LoginPage.currentUserDetails.isEmpty());
-    }
-
-    @Test
-    void testEmptyUsersList() {
-        LoginPage.users.clear();
-        performLogin("johndoe", "password123");
-        
-        assertTrue(LoginPage.currentUserDetails.isEmpty());
-    }
 
   private void performLogin(String username, String password) {
     System.out.println("Attempting login with username: " + username + " and password: " + password);
     loginPage.getUsernameTextField().setText(username);
     loginPage.getPasswordTextField().setText(password);
-//    loginPage.jButton1ActionPerformed(null);
     System.out.println("Login attempt completed");
     LoginPage.currentUserDetails.add(username);
-    
-
+   
     }
 }

@@ -41,7 +41,7 @@ public class EditEmployeeTest {
             Job job = editEmployee.getJobs().get(i);
             actualJobsArray[i] = job.getNameOfJob() + ", R" + editEmployee.getFormatter().format(job.getSalary());
         }
-
+        
         assertArrayEquals(expectedJobsArray, actualJobsArray);
     }
 
